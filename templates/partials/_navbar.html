@@ -1,0 +1,32 @@
+{% load static %}
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        
+        <ul class="navbar-nav ml-auto">
+            <li
+            {% if 'submit' in request.path %}
+              class="nav-item active mr-3"
+            {% else %}
+              class="nav-item mr-3"
+            {% endif %}
+            >
+              <a class="nav-link" href="{% url 'Submit' %}">
+                <i class="fas fa-user-plus"></i> Submit Report</a>
+            </li>
+            <li
+            {% if 'list' in request.path %}
+              class="nav-item active mr-3"
+            {% else %}
+              class="nav-item mr-3"
+            {% endif %}
+            >
+              <a class="nav-link" href="{% url 'List' %}">
+                <i class="fas fa-user-plus"></i> List Reports</a>
+            </li>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
